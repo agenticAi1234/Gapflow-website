@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {
   Workflow, GitBranch, Repeat, Play, Bot, BookOpen, CheckCircle,
-  MessageSquare, Code2, Terminal, Webhook, FileJson, Sparkles, ArrowRight, Rocket, Zap
+  MessageSquare, Code2, Terminal, Webhook, FileJson, ArrowRight, Rocket, Zap
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -68,37 +68,6 @@ export default function Features() {
             animation: marquee-right 45s linear infinite;
           }
         `}</style>
-
-      {/* Hero Section */}
-      <section className="pt-10 pb-6 lg:pt-14 lg:pb-8 border-b border-slate-100/50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-50/20 via-white to-white pointer-events-none" />
-        <div className="container-standard text-center relative z-10">
-          <div className="inline-flex items-center justify-center w-full mb-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 shadow-sm">
-              <Sparkles size={14} className="text-[#10B981]" />
-              <span className="text-[10px] text-emerald-700 font-bold tracking-[0.15em] uppercase">Technical Deep-Dive</span>
-            </div>
-          </div>
-
-          <h1 className="heading-hero mb-6">
-            The Engine of <br />
-            <span className="text-[#10B981]">Modern Automation.</span>
-          </h1>
-
-          <p className="text-subcopy max-w-2xl mx-auto mb-8 text-slate-500/90 text-center font-medium">
-            Analyze the inner workings of Gapflow. From semantic routing to vector memory, every component is engineered for production-grade scale.
-          </p>
-
-          <div className="flex gap-5 justify-center flex-wrap">
-            <button className="btn-primary min-w-[220px] shadow-lg shadow-emerald-200/50 !bg-[#10B981]">
-              Explore The Core
-            </button>
-            <button className="btn-secondary min-w-[220px] border-slate-200 hover:border-[#10B981] hover:text-[#10B981]">
-              Read Spec Sheet
-            </button>
-          </div>
-        </div>
-      </section>
 
       <LazySection fallback={<SectionLoader />}>
         <Suspense fallback={<SectionLoader />}>

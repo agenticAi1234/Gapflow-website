@@ -8,6 +8,7 @@ type GfHeroProps = {
   subcopyOverride?: string;
   primaryCtaLabel?: string;
   secondaryCtaLabel?: string;
+  showCtas?: boolean;
 };
 
 const copyVariants = {
@@ -38,7 +39,8 @@ export default function GfHero({
   headlineOverride,
   subcopyOverride,
   primaryCtaLabel,
-  secondaryCtaLabel
+  secondaryCtaLabel,
+  showCtas = true
 }: GfHeroProps) {
   const copy = copyVariants[variant];
   const customHeadline = headlineOverride ? [headlineOverride, ''] : copy.headlineParts;
@@ -71,21 +73,23 @@ export default function GfHero({
             {subcopy}
           </p>
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <button
-              onClick={onPrimaryClick}
-              className="btn-primary flex items-center justify-center gap-4 w-full sm:w-auto group min-w-[240px] !py-5 !bg-[#00C07F] hover:!bg-[#00a86f] shadow-[0_20px_40px_-12px_rgba(0,192,127,0.35)] transition-all duration-300 font-black tracking-widest text-xs uppercase"
-            >
-              {primaryLabel} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+          {showCtas && (
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <button
+                onClick={onPrimaryClick}
+                className="btn-primary flex items-center justify-center gap-4 w-full sm:w-auto group min-w-[240px] !py-5 !bg-[#00C07F] hover:!bg-[#00a86f] shadow-[0_20px_40px_-12px_rgba(0,192,127,0.35)] transition-all duration-300 font-black tracking-widest text-xs uppercase"
+              >
+                {primaryLabel} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </button>
 
-            <button
-              onClick={onSecondaryClick}
-              className="btn-secondary w-full sm:w-auto min-w-[240px] !py-5 !border-2 !border-slate-100 hover:!border-[#00C07F] hover:!text-[#00C07F] transition-all duration-300 font-black tracking-widest text-xs uppercase bg-white shadow-md"
-            >
-              {secondaryLabel}
-            </button>
-          </div>
+              <button
+                onClick={onSecondaryClick}
+                className="btn-secondary w-full sm:w-auto min-w-[240px] !py-5 !border-2 !border-slate-100 hover:!border-[#00C07F] hover:!text-[#00C07F] transition-all duration-300 font-black tracking-widest text-xs uppercase bg-white shadow-md"
+              >
+                {secondaryLabel}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>

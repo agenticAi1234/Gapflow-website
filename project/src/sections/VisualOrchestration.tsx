@@ -30,7 +30,7 @@ export default function VisualOrchestration() {
   ];
 
   return (
-    <section className="pt-10 pb-0 bg-white overflow-hidden">
+    <section className="pt-5 pb-0 bg-white overflow-hidden">
       <div className="container-standard">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           <div>

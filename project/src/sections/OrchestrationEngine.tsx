@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Sparkles, CheckCircle2 } from 'lucide-react';
+import { Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const audienceContent = {
@@ -135,6 +135,25 @@ export default function OrchestrationEngine() {
             </div>
 
           </div>
+        </div>
+
+        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <button
+            onClick={() => window.open('https://app.gapflow.ai/', '_blank')}
+            className="btn-primary flex items-center justify-center gap-4 w-full sm:w-auto group min-w-[240px] !py-5 !bg-[#00C07F] hover:!bg-[#00a86f] shadow-[0_20px_40px_-12px_rgba(0,192,127,0.35)] transition-all duration-300 font-black tracking-widest text-xs uppercase"
+          >
+            START BUILDING <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </button>
+
+          <button
+            onClick={() => {
+              const element = document.getElementById('demo');
+              if (element) element.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="btn-secondary w-full sm:w-auto min-w-[240px] !py-5 !border-2 !border-slate-100 hover:!border-[#00C07F] hover:!text-[#00C07F] transition-all duration-300 font-black tracking-widest text-xs uppercase bg-white shadow-md"
+          >
+            WATCH DEMO
+          </button>
         </div>
       </div>
     </section>
