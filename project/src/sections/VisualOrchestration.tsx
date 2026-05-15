@@ -30,7 +30,7 @@ export default function VisualOrchestration() {
   ];
 
   return (
-    <section className="pt-12 pb-0 bg-white overflow-hidden">
+    <section className="pt-10 pb-0 bg-white overflow-hidden">
       <div className="container-standard">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           <div>
@@ -39,12 +39,13 @@ export default function VisualOrchestration() {
             </div>
 
             <h2 className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tighter leading-[1.1] mb-4">
-              Build Operational Logic Visually
+              Design Logic. <br />
+              Deploy At Scale.
             </h2>
 
             <p className="text-base text-slate-500 font-bold leading-relaxed mb-8 max-w-xl">
-              Design workflows, AI agent coordination, integrations, retries,
-              scheduling, approvals, and execution logic from one orchestration layer.
+              Build complex, multi-step agent paths with our visual canvas.
+              Test conditional branches, API calls, and logic flows in real-time.
             </p>
 
             <div className="space-y-8 mt-12">

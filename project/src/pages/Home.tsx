@@ -2,14 +2,14 @@ import { lazy, Suspense } from 'react';
 import LazySection from '../components/LazySection';
 
 const Hero = lazy(() => import('../sections/Hero'));
-const TrustSection = lazy(() => import('../sections/TrustSection'));
+
 const OrchestrationEngine = lazy(() => import('../sections/OrchestrationEngine'));
 const EngineeringLeverage = lazy(() => import('../sections/EngineeringLeverage'));
 const VisualOrchestration = lazy(() => import('../sections/VisualOrchestration'));
 const AgentDemo = lazy(() => import('../sections/AgentDemo'));
 const IntegrationsStack = lazy(() => import('../sections/IntegrationsStack'));
 const MetricsSection = lazy(() => import('../sections/MetricsSection'));
-const WorkflowBuilder = lazy(() => import('../sections/WorkflowBuilder'));
+
 const Capabilities = lazy(() => import('../sections/Capabilities'));
 const Templates = lazy(() => import('../sections/Templates'));
 const FinalCTA = lazy(() => import('../sections/FinalCTA'));
@@ -26,13 +26,9 @@ const SectionLoader = () => (
 export default function Home() {
   return (
     <div className="bg-white">
-      {/* Hero loads immediately to ensure fast LCP */}
-      <Suspense fallback={<SectionLoader />}>
-        <Hero />
-      </Suspense>
 
       <Suspense fallback={<SectionLoader />}>
-        <TrustSection />
+        <Hero />
       </Suspense>
 
 
@@ -60,14 +56,6 @@ export default function Home() {
       <Suspense fallback={<SectionLoader />}>
         <IntegrationsStack />
       </Suspense>
-
-
-      <LazySection fallback={<SectionLoader />}>
-        <Suspense fallback={<SectionLoader />}>
-          <WorkflowBuilder />
-        </Suspense>
-      </LazySection>
-
 
       <LazySection fallback={<SectionLoader />}>
         <Suspense fallback={<SectionLoader />}>

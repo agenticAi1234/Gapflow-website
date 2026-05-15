@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { Shield, Zap, RefreshCw, Cpu, Database, Network } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 const capabilities = [
   {
@@ -53,8 +55,8 @@ const themeMap: Record<string, { bg: string, icon: string, border: string }> = {
 
 export default function Capabilities() {
   return (
-    <section className="section-padding bg-[#F9FAFF] overflow-hidden">
-      <div className="container-standard">
+    <section className="pt-20 pb-8 bg-[#F9FAFF] overflow-hidden relative">
+      <div className="container-standard relative">
         <div className="max-w-3xl mx-auto text-center mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200/60 shadow-sm mb-8">
             <Cpu size={14} className="text-[#10B981]" />
@@ -66,7 +68,7 @@ export default function Capabilities() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
           {capabilities.map((item, i) => {
             const theme = themeMap[item.theme];
             return (
@@ -78,11 +80,11 @@ export default function Capabilities() {
                 transition={{ delay: i * 0.05, duration: 0.6 }}
                 className={`card-premium group transition-all duration-500 hover:-translate-y-1 ${theme.border} relative`}
               >
-                <div className={`w-14 h-14 rounded-2xl ${theme.bg} flex items-center justify-center mb-8 group-hover:scale-110 transition-all duration-500 border border-slate-100`}>
+                <div className={`w-14 h-14 rounded-2xl ${theme.bg} flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-500 border border-slate-100`}>
                   <item.icon size={26} className={theme.icon} />
                 </div>
 
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-2">
                   <h3 className="text-xl font-bold text-slate-900 tracking-tight">{item.title}</h3>
                   {item.upcoming && (
                     <span className="px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest bg-gradient-to-r from-slate-800 to-slate-900 text-white shadow-sm ring-1 ring-white/10">
@@ -97,6 +99,16 @@ export default function Capabilities() {
               </motion.div>
             );
           })}
+        </div>
+
+        <div className="flex justify-center lg:justify-end lg:absolute lg:-bottom-2 lg:right-0">
+          <Link
+            to="/features"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-white border border-slate-200 text-[10px] font-black uppercase tracking-[0.25em] text-slate-900 hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all duration-500 shadow-sm group"
+          >
+            Explore
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </div>
     </section>
