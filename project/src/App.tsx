@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useInteractions } from './hooks/useInteractions';
 import Header from './components/Header';
 import Footer from './sections/Footer';
+import ScrollRestorer from './components/ScrollRestorer';
 // import ParticleBackground from './components/ParticleBackground';
 // import CircuitBackground from './components/CircuitBackground';
 // import FlowThread from './components/FlowThread';
@@ -18,6 +19,8 @@ const Docs = lazy(() => import('./pages/Docs'));
 const Integrations = lazy(() => import('./pages/Integrations'));
 const ConnectorDetail = lazy(() => import('./pages/ConnectorDetail'));
 const Pricing = lazy(() => import('./pages/Pricing'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const ContactUs = lazy(() => import('./pages/ContactUs'));
 
 const LoadingFallback = () => (
   <div className="min-h-screen bg-white flex items-center justify-center">
@@ -51,6 +54,7 @@ function AppContent() {
 
   return (
     <div className="relative isolate min-h-screen">
+      <ScrollRestorer />
       <Header />
       <main id="main-content" role="main">
         <Suspense fallback={<LoadingFallback />}>
@@ -64,6 +68,8 @@ function AppContent() {
               <Route path="/integrations" element={<PageWrapper><Integrations /></PageWrapper>} />
               <Route path="/integrations/:slug" element={<PageWrapper><ConnectorDetail /></PageWrapper>} />
               <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
+              <Route path="/privacy-policy" element={<PageWrapper><PrivacyPolicy /></PageWrapper>} />
+              <Route path="/contact-us" element={<PageWrapper><ContactUs /></PageWrapper>} />
             </Routes>
           </AnimatePresence>
         </Suspense>

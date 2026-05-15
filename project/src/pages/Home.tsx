@@ -4,7 +4,6 @@ import LazySection from '../components/LazySection';
 const Hero = lazy(() => import('../sections/Hero'));
 
 const OrchestrationEngine = lazy(() => import('../sections/OrchestrationEngine'));
-const EngineeringLeverage = lazy(() => import('../sections/EngineeringLeverage'));
 const VisualOrchestration = lazy(() => import('../sections/VisualOrchestration'));
 const AgentDemo = lazy(() => import('../sections/AgentDemo'));
 const IntegrationsStack = lazy(() => import('../sections/IntegrationsStack'));
@@ -38,11 +37,6 @@ export default function Home() {
 
       <Suspense fallback={<SectionLoader />}>
         <MetricsSection />
-      </Suspense>
-
-
-      <Suspense fallback={<SectionLoader />}>
-        <EngineeringLeverage />
       </Suspense>
 
       <Suspense fallback={<SectionLoader />}>

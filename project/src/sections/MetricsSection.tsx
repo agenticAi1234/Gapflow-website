@@ -9,22 +9,22 @@ const stats = [
 
 export default function MetricsSection() {
   return (
-    <section className="mt-10 pb-10 pt-12 bg-slate-900 overflow-hidden relative">
+    <section className="mt-10 pb-10 mb-10 pt-12 bg-slate-900 overflow-hidden relative">
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
         <div className="absolute -top-[50%] -left-[10%] w-[70%] h-[150%] bg-emerald-500/10 blur-[120px] rounded-full rotate-12 animate-pulse" />
         <div className="absolute top-[20%] -right-[10%] w-[50%] h-[100%] bg-blue-500/10 blur-[120px] rounded-full -rotate-12" />
       </div>
 
       <div className="relative z-10">
-        <div className="container-standard">
-          <div className="max-w-4xl mb-10 text-center lg:text-left">
-            <h2 className="text-3xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15]">
-              AI Agents Are Everywhere. <br />
+        <div className="w-full px-6 lg:px-12">
+          <div className="max-w-none mx-auto mb-12 text-center">
+            <h2 className="text-3xl lg:text-5xl font-bold text-white tracking-tight leading-[1.15] whitespace-nowrap">
+              AI Agents Are Everywhere.{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400">
                 Production Execution Is The Gap.
               </span>
             </h2>
-            <p className="mt-0 text-lg text-slate-400 max-w-3xl leading-relaxed">
+            <p className="mt-2 text-lg text-slate-400 max-w-none mx-auto leading-relaxed whitespace-nowrap">
               The real challenge is no longer creating agents. It is connecting them to workflows,
               systems, governance, and reliable operational execution.
             </p>
@@ -58,6 +58,19 @@ export default function MetricsSection() {
               </motion.div>
             ))}
           </div>
+        </div>
+
+        <div className="mt-10 max-w-4xl mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-2xl lg:text-4xl font-bold text-white tracking-tight leading-tight"
+          >
+            Gapflow becomes the operational <br />
+            execution layer between AI and production systems.
+          </motion.h2>
         </div>
       </div>
     </section>
