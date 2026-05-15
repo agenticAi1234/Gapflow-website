@@ -59,9 +59,7 @@ export default function OrchestrationEngine() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
 
             <div className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-50 flex flex-col">
-              <span className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase mb-4 block">
-                AUDIENCE LAYER
-              </span>
+
               <h3 className="text-xl font-black text-slate-900 mb-8 tracking-tighter">Gapflow for Your Team</h3>
 
               <div className="space-y-3 flex-grow">
@@ -108,11 +106,9 @@ export default function OrchestrationEngine() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-50 h-full flex flex-col"
+                  className={`rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col border-2 transition-colors duration-300 ${audienceContent[activeTab].color}`}
                 >
-                  <span className="text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase mb-6 block">
-                    {audienceContent[activeTab].label}
-                  </span>
+
 
                   <h3 className="text-xl lg:text-2xl font-black text-slate-900 mb-4 tracking-tighter leading-tight">
                     {audienceContent[activeTab].header}

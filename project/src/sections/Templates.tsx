@@ -6,7 +6,7 @@ export default function Templates() {
   const displayTemplates = templatesData.templates.slice(0, 4);
 
   return (
-    <section id="templates" className="py-24 bg-white border-y border-slate-100/50">
+    <section id="templates" className="pt-12 pb-24 bg-white border-y border-slate-100/50">
       <div className="container-standard relative z-10">
 
         <div className="max-w-4xl mx-auto text-center mb-20">
